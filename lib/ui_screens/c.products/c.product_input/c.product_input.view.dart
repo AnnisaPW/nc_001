@@ -10,7 +10,6 @@ class ProductInputView extends StatelessWidget {
         preferredSize: Size.fromHeight(56),
         child: ProductInputAppbar(),
       ),
-      floatingActionButton: ProductInputFab(),
       body: Center(
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
