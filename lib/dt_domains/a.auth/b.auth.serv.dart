@@ -3,6 +3,9 @@ part of '_index.dart';
 class AuthServ {
   void init() {
     logxx.i(AuthServ, '...');
+    _pv.rxUser.subscription = x1FbAuth.st.instance.authStateChanges().listen(
+          (event) => _pv.rxUser.st = event,
+        );
   }
 
   void updateRandom() {

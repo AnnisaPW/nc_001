@@ -7,6 +7,14 @@ class ProductListAppbar extends StatelessWidget {
   Widget build(BuildContext context) {
     return AppBar(
       title: OnReactive(() => Text(_dt.rxTitle.st)),
+      actions: [
+        IconButton(
+          onPressed: () {
+            _ct.signOut();
+          },
+          icon: const Icon(Icons.logout),
+        ),
+      ],
     );
   }
 }

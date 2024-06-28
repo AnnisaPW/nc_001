@@ -10,7 +10,6 @@ class ProductEditView extends StatelessWidget {
         preferredSize: Size.fromHeight(56),
         child: ProductEditAppbar(),
       ),
-      floatingActionButton: const ProductEditFab(),
       body: Center(
         child: OnFormBuilder(
           listenTo: _dt.rxForm.st,

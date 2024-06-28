@@ -13,5 +13,7 @@ Future<void> inits() async {
 
   Serv.auth.init();
 
+  setPathUrlStrategy();
+
   logx.wtf('inits success');
 }

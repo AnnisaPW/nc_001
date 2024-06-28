@@ -6,4 +6,18 @@ class LoginCtrl {
   increaseCounter() => _dt.rxCounter.setState((s) => s + 1);
 
   updateRandom() => Serv.sample.updateRandom();
+
+  signInAnonymous() async {
+    await _sv.signInAnonymous();
+  }
+
+  signInWithEmailAndPassword() async {
+    await _sv.signInWithEmailAndPassword(_dt.rxEmail.value, _dt.rxPassword.value);
+  }
+
+  signInWithGoogle() async {
+    await _sv.signInWithGoogle();
+  }
+
+  submit() => _dt.rxForm.submit();
 }

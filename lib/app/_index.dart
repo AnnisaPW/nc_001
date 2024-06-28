@@ -2,6 +2,7 @@ import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:nc_001/firebase_options.dart';
 import 'package:states_rebuilder/states_rebuilder.dart';
+import 'package:url_strategy/url_strategy.dart';
 
 import '../dt_domains/_index.dart';
 import '../xtras/_index.dart';

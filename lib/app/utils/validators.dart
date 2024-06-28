@@ -110,8 +110,8 @@ class Validate {
   }
 
   static String? pwdEquals(String? str1) {
-    // final str2 = Data.register.st.rxPassword.text;
-    const str2 = 'Data.register.st.rxPassword.text';
+    final str2 = Data.register.st.rxPassword.text;
+    // const str2 = 'Data.register.st.rxPassword.text';
     if (str1 != str2) {
       return "not equals";
     }
