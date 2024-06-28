@@ -7,8 +7,13 @@ class ProductEditCtrl {
 
   updateRandom() => Serv.sample.updateRandom();
 
+  pickImage() async {
+    final imagePicker = await ImagePicker().pickImage(source: ImageSource.gallery);
+    _dt.rxPickedFile.st = imagePicker;
+  }
+
   Future updateProduct() async {
-    final productEdit = Product(
+    Product productEdit = Product(
       id: _dt.rxProductDetail.st!.id,
       name: _dt.rxName.st.value,
       description: _dt.rxDescription.st.value,
@@ -17,6 +22,12 @@ class ProductEditCtrl {
       createdAt: _dt.rxProductDetail.st!.createdAt,
       updatedAt: DateTime.now().toString(),
     );
+
+    if (_dt.rxPickedFile.st != null) {
+      final imageFromStorage = await _sv.uploadImage(_dt.rxPickedFile.st, productEdit.id);
+      final productWithImage = productEdit.copyWith(imageUrl: imageFromStorage);
+      productEdit = productWithImage;
+    }
 
     await _sv.updateProduct(productEdit);
     nav.back();

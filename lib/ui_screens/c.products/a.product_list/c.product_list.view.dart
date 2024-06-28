@@ -30,6 +30,13 @@ class ProductListView extends StatelessWidget {
                       onTap: () {
                         _ct.select(_dt.rxProductList.st[index].id);
                       },
+                      leading: _dt.rxProductList.st[index].imageUrl.isNotEmpty
+                          ? SizedBox(
+                              width: 50,
+                              height: 50,
+                              child: Image.network(_dt.rxProductList.st[index].imageUrl),
+                            )
+                          : null,
                       trailing: IconButton(
                         onPressed: () async {
                           final productEdit = Product(

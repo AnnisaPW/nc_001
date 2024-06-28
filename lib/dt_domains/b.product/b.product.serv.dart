@@ -36,6 +36,9 @@ class ProductServ {
 
   Future delete() async {
     await _rp.deleteProduct(_pv.rxSelectedId.st);
+    if (_pv.rxProductDetail.st!.imageUrl.isNotEmpty) {
+      await _rp.deleteImage();
+    }
     _pv.rxProductList.st = [..._pv.rxProductList.st]..removeWhere((element) => element.id == _pv.rxSelectedId.st);
   }
 

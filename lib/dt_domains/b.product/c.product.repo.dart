@@ -36,7 +36,7 @@ class ProductRepo {
   Future<String> uploadImage(XFile? pickedFile, String doc) async {
     final result = await x1FbStorage.st.uploadFile(
       pickedFile: pickedFile,
-      ref: '${_pv.coll}/${_pv.rxSelectedId.st}',
+      ref: '${_pv.coll}/$doc',
     );
     return result;
   }
