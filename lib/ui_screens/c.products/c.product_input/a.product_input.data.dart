@@ -39,4 +39,6 @@ class ProductInputData {
       Validate.isNumeric,
     ],
   );
+
+  final rxPickedFile = RM.inject<XFile?>(() => null);
 }

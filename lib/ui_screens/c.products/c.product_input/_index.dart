@@ -1,4 +1,8 @@
+import 'dart:io';
+
+import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
+import 'package:image_picker/image_picker.dart';
 import 'package:nc_001/ui_widgets/spaces/_index.dart';
 import 'package:states_rebuilder/states_rebuilder.dart';
 import 'package:uuid/uuid.dart';
@@ -16,7 +20,8 @@ part 'widgets/c.product_input.name.dart';
 part 'widgets/d.product_input.description.dart';
 part 'widgets/e.product_input.price.dart';
 part 'widgets/f.product_input.quantity.dart';
-part 'widgets/g.product_input.submit.dart';
+part 'widgets/g.product_input.image.dart';
+part 'widgets/h.product_input.submit.dart';
 
 ProductInputData get _dt => Data.productInput.st;
 ProductInputCtrl get _ct => Ctrl.productInput;

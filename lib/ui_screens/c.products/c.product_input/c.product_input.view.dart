@@ -25,6 +25,8 @@ class ProductInputView extends StatelessWidget {
                 ProductInputPrice(),
                 SizedBoxH(15),
                 ProductInputQuantity(),
+                SizedBoxH(15),
+                ProductInputImage(),
                 SizedBoxH(20),
                 ProductInputSubmit(),
               ],

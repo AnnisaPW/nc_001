@@ -16,13 +16,18 @@ class ProductInputCtrl {
       quantity: int.parse(_dt.rxQuantity.value),
       description: _dt.rxDescription.value,
       createdAt: DateTime.now().toString(),
-      imageUrl: "",
-      updatedAt: "",
     );
-    await _sv.createProduct(product);
-    _dt.rxProductList.st = [..._dt.rxProductList.st]..insert(0, product);
+    final imageUrl = await _sv.uploadImage(_dt.rxPickedFile.st, product.id);
+    final productWithImage = product.copyWith(imageUrl: imageUrl);
+    await _sv.createProduct(productWithImage);
+    _dt.rxProductList.st = [..._dt.rxProductList.st]..insert(0, productWithImage);
     nav.back();
   }
 
   submit() => _dt.rxForm.submit();
+
+  pickImage() async {
+    final imagePicker = await ImagePicker().pickImage(source: ImageSource.gallery);
+    _dt.rxPickedFile.st = imagePicker;
+  }
 }
