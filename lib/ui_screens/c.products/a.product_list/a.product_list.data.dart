@@ -10,4 +10,6 @@ class ProductListData {
   final rxProductLoader = _pv.rxProductLoader;
 
   final rxProductList = _pv.rxProductList;
+
+  final rxSelectedId = _pv.rxSelectedId;
 }

@@ -5,6 +5,11 @@ class ProductServ {
     logxx.i(ProductServ, '...');
   }
 
+  setSelectedId(String id) {
+    _pv.rxSelectedId.refresh();
+    _pv.rxSelectedId.setState((s) => id);
+  }
+
   void updateRandom() {
     _pv.rxRandom.st = _rp.giveNewRandom();
   }
@@ -23,5 +28,9 @@ class ProductServ {
 
   Future createProduct(Product product) async {
     await _rp.createProduct(product);
+  }
+
+  initProductDetail() {
+    _pv.rxProductDetail.stateAsync = _rp.readProduct(_pv.rxSelectedId.st);
   }
 }

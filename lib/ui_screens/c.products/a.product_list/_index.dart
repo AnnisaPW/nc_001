@@ -20,3 +20,4 @@ ProductListData get _dt => Data.productList.st;
 ProductListCtrl get _ct => Ctrl.productList;
 
 ProductProv get _pv => Prov.product.st;
+ProductServ get _sv => Serv.product;

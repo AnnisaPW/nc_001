@@ -19,4 +19,9 @@ class ProductRepo {
   Future<dynamic> createProduct(Product product) async {
     await x1FbFirestore.st.createDocument(_pv.coll, product.id, product.toMap());
   }
+
+  Future<Product> readProduct(String doc) async {
+    final result = await x1FbFirestore.st.readDocument(_pv.coll, doc);
+    return Product.fromMap(result.data() ?? {});
+  }
 }

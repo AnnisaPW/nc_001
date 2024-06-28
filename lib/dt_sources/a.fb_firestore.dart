@@ -11,4 +11,9 @@ class FbFirestore {
   Future<void> createDocument(String coll, String doc, Map<String, dynamic> data) async {
     await FirebaseFirestore.instance.collection(coll).doc(doc).set(data);
   }
+
+  Future<DocumentSnapshot<Map<String, dynamic>>> readDocument(String coll, String doc) async {
+    final result = await FirebaseFirestore.instance.collection(coll).doc(doc).get();
+    return result;
+  }
 }

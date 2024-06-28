@@ -6,4 +6,9 @@ class ProductListCtrl {
   increaseCounter() => _dt.rxCounter.setState((s) => s + 1);
 
   updateRandom() => Serv.sample.updateRandom();
+
+  select(String id) {
+    _sv.setSelectedId(id);
+    nav.to(Routes.productDetail);
+  }
 }
