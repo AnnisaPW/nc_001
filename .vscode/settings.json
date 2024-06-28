@@ -26,8 +26,6 @@
     "*.vscode.*": true,
     "*analysis_options": true,
     "*analysis_options.*": true,
-    "*android": true,
-    "*android.*": true,
     "*assets": true,
     "*assets.*": true,
     "*build": true,
