@@ -24,4 +24,8 @@ class ProductRepo {
     final result = await x1FbFirestore.st.readDocument(_pv.coll, doc);
     return Product.fromMap(result.data() ?? {});
   }
+
+  Future<dynamic> deleteProduct(String doc) async {
+    await x1FbFirestore.st.deleteDocument(_pv.coll, doc);
+  }
 }

@@ -33,4 +33,9 @@ class ProductServ {
   initProductDetail() {
     _pv.rxProductDetail.stateAsync = _rp.readProduct(_pv.rxSelectedId.st);
   }
+
+  Future delete() async {
+    await _rp.deleteProduct(_pv.rxSelectedId.st);
+    _pv.rxProductList.st = [..._pv.rxProductList.st]..removeWhere((element) => element.id == _pv.rxSelectedId.st);
+  }
 }

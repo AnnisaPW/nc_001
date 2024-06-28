@@ -1,5 +1,6 @@
 import 'dart:math';
 
+import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
 import 'package:states_rebuilder/states_rebuilder.dart';
 
@@ -20,3 +21,4 @@ ProductDetailData get _dt => Data.productDetail.st;
 ProductDetailCtrl get _ct => Ctrl.productDetail;
 
 ProductProv get _pv => Prov.product.st;
+ProductServ get _sv => Serv.product;
