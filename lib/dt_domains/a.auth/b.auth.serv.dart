@@ -12,4 +12,40 @@ class AuthServ {
   void onSetState() {
     logzz.i(AuthServ, 'rxCounter setState success');
   }
+
+  responseAuthState(User? user) async {
+    if (nav.routeData.location == '/login' || nav.routeData.location == '/register') {
+      if (user != null) {
+        nav.toReplacement(Routes.productList);
+      }
+    } else {
+      if (user == null) {
+        nav.toAndRemoveUntil(Routes.login);
+      }
+    }
+  }
+
+  Future signInWithEmailAndPassword(String email, String password) async {
+    await x1FbAuth.st.signInWithEmailPassword(email, password);
+  }
+
+  Future signUpWithEmailAndPassword(String email, String password) async {
+    await x1FbAuth.st.createEmailAndPassword(email, password);
+  }
+
+  Future signOut() async {
+    await x1FbAuth.st.signOut();
+  }
+
+  Future signInWithGoogle() async {
+    await x1FbAuth.st.signInWithGoogle();
+  }
+
+  Future signInAnonymous() async {
+    await x1FbAuth.st.signInAnonymous();
+  }
+
+  Future createEmailAndPassword(String email, String password) async {
+    await x1FbAuth.st.createEmailAndPassword(email, password);
+  }
 }
