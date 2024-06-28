@@ -48,4 +48,9 @@ class ProductServ {
       return s[productIndex] = product;
     });
   }
+
+  Future<String> uploadImage(XFile? pickedFile, String doc) async {
+    final urlFromStorage = _rp.uploadImage(pickedFile, doc);
+    return urlFromStorage;
+  }
 }
