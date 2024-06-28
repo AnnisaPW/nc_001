@@ -38,4 +38,14 @@ class ProductServ {
     await _rp.deleteProduct(_pv.rxSelectedId.st);
     _pv.rxProductList.st = [..._pv.rxProductList.st]..removeWhere((element) => element.id == _pv.rxSelectedId.st);
   }
+
+  Future updateProduct(Product product) async {
+    await _rp.updateProduct(product);
+    _pv.rxProductList.setState((s) {
+      final productIndex = _pv.rxProductList.st.indexWhere(
+        (element) => element.id == _pv.rxSelectedId.st,
+      );
+      return s[productIndex] = product;
+    });
+  }
 }

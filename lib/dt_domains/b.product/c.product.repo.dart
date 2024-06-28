@@ -28,4 +28,8 @@ class ProductRepo {
   Future<dynamic> deleteProduct(String doc) async {
     await x1FbFirestore.st.deleteDocument(_pv.coll, doc);
   }
+
+  Future<dynamic> updateProduct(Product product) async {
+    await x1FbFirestore.st.createDocument(_pv.coll, product.id, product.toMap());
+  }
 }

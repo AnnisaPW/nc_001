@@ -5,20 +5,32 @@ class ProductEditView extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const Scaffold(
-      appBar: PreferredSize(
+    return Scaffold(
+      appBar: const PreferredSize(
         preferredSize: Size.fromHeight(56),
         child: ProductEditAppbar(),
       ),
-      floatingActionButton: ProductEditFab(),
+      floatingActionButton: const ProductEditFab(),
       body: Center(
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: [
-            ProductEditCharlie(),
-            ProductEditDelta(),
-            ProductEditEcho(),
-          ],
+        child: OnFormBuilder(
+          listenTo: _dt.rxForm.st,
+          builder: () => Container(
+            constraints: const BoxConstraints(maxWidth: 400),
+            child: const Column(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                ProductEditName(),
+                SizedBoxH(15),
+                ProductEditDescription(),
+                SizedBoxH(15),
+                ProductEditPrice(),
+                SizedBoxH(15),
+                ProductEditQuantity(),
+                SizedBoxH(20),
+                ProductEditSubmit(),
+              ],
+            ),
+          ),
         ),
       ),
     );
