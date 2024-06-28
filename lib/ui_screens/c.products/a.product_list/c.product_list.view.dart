@@ -30,6 +30,32 @@ class ProductListView extends StatelessWidget {
                       onTap: () {
                         _ct.select(_dt.rxProductList.st[index].id);
                       },
+                      trailing: IconButton(
+                        onPressed: () async {
+                          final productEdit = Product(
+                            id: _dt.rxProductList.st[index].id,
+                            name: generateWordPairs().take(3).join(' '),
+                            description: generateWordPairs().take(5).join(' '),
+                            price: Random().nextInt(1000000),
+                            quantity: Random().nextInt(1000),
+                            createdAt: _dt.rxProductList.st[index].createdAt,
+                            updatedAt: DateTime.now().toString(),
+                          );
+                          await FirebaseFirestore.instance
+                              .collection("products")
+                              .doc(_dt.rxProductList.st[index].id)
+                              .set(
+                                productEdit.toMap(),
+                              );
+                          _pv.rxProductList.setState((s) {
+                            final productIndex = _pv.rxProductList.st.indexWhere(
+                              (element) => element.id == _dt.rxProductList.st[index].id,
+                            );
+                            return s[productIndex] = productEdit;
+                          });
+                        },
+                        icon: const Icon(Icons.loop),
+                      ),
                     ),
                   ),
                 ),
