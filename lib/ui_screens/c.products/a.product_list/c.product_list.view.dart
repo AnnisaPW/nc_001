@@ -13,7 +13,7 @@ class ProductListView extends StatelessWidget {
       floatingActionButton: const ProductListFab(),
       body: Center(
         child: OnBuilder.all(
-          listenToMany: [_dt.rxProductLoader],
+          listenToMany: [_dt.rxProductLoader, _dt.rxProductList],
           onWaiting: () => const Center(child: CircularProgressIndicator()),
           onError: (error, refreshError) => Center(child: Text('Error $error')),
           onData: (data) => Column(

@@ -5,8 +5,8 @@ class ProductInputView extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const Scaffold(
-      appBar: PreferredSize(
+    return Scaffold(
+      appBar: const PreferredSize(
         preferredSize: Size.fromHeight(56),
         child: ProductInputAppbar(),
       ),
@@ -14,9 +14,14 @@ class ProductInputView extends StatelessWidget {
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            ProductInputCharlie(),
-            ProductInputDelta(),
-            ProductInputEcho(),
+            ElevatedButton(
+              onPressed: () async {
+                await _ct.createProduct();
+              },
+              child: const Text(
+                "Create",
+              ),
+            ),
           ],
         ),
       ),

@@ -20,4 +20,8 @@ class ProductServ {
   addToList(List<Product> moreProducts) {
     _pv.rxProductList.st = [..._pv.rxProductList.st, ...moreProducts];
   }
+
+  Future createProduct(Product product) async {
+    await _rp.createProduct(product);
+  }
 }

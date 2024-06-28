@@ -15,4 +15,8 @@ class ProductRepo {
     }
     return products;
   }
+
+  Future<dynamic> createProduct(Product product) async {
+    await x1FbFirestore.st.createDocument(_pv.coll, product.id, product.toMap());
+  }
 }

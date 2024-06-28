@@ -23,6 +23,8 @@ dependencies:
   firebase_storage: ^12.1.0
   cloud_firestore: ^5.0.2
   google_sign_in: ^6.2.1
+  uuid: ^4.4.0
+  english_words: ^4.0.0
 
 dev_dependencies:
   flutter_test:
