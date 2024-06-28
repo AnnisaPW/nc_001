@@ -11,7 +11,7 @@ Future<void> inits() async {
     options: DefaultFirebaseOptions.currentPlatform,
   );
 
-  Serv.sample.init();
+  Serv.auth.init();
 
   logx.wtf('inits success');
 }
