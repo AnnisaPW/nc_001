@@ -11,18 +11,25 @@ class ProductInputView extends StatelessWidget {
         child: ProductInputAppbar(),
       ),
       body: Center(
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: [
-            ElevatedButton(
-              onPressed: () async {
-                await _ct.createProduct();
-              },
-              child: const Text(
-                "Create",
-              ),
+        child: Container(
+          constraints: const BoxConstraints(maxWidth: 400),
+          child: OnFormBuilder(
+            listenTo: _dt.rxForm,
+            builder: () => const Column(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                ProductInputName(),
+                SizedBoxH(15),
+                ProductInputDescription(),
+                SizedBoxH(15),
+                ProductInputPrice(),
+                SizedBoxH(15),
+                ProductInputQuantity(),
+                SizedBoxH(20),
+                ProductInputSubmit(),
+              ],
             ),
-          ],
+          ),
         ),
       ),
     );

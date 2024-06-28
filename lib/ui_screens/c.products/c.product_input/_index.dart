@@ -1,8 +1,5 @@
-import 'dart:math';
-
-import 'package:cloud_firestore/cloud_firestore.dart';
-import 'package:english_words/english_words.dart';
 import 'package:flutter/material.dart';
+import 'package:nc_001/ui_widgets/spaces/_index.dart';
 import 'package:states_rebuilder/states_rebuilder.dart';
 import 'package:uuid/uuid.dart';
 
@@ -15,9 +12,11 @@ part 'b.product_input.ctrl.dart';
 part 'c.product_input.view.dart';
 part 'widgets/a.product_input.appbar.dart';
 part 'widgets/b.product_input.fab.dart';
-part 'widgets/c.product_input.charlie.dart';
-part 'widgets/d.product_input.delta.dart';
-part 'widgets/e.product_input.echo.dart';
+part 'widgets/c.product_input.name.dart';
+part 'widgets/d.product_input.description.dart';
+part 'widgets/e.product_input.price.dart';
+part 'widgets/f.product_input.quantity.dart';
+part 'widgets/g.product_input.submit.dart';
 
 ProductInputData get _dt => Data.productInput.st;
 ProductInputCtrl get _ct => Ctrl.productInput;
