@@ -5,6 +5,12 @@ Future<void> inits() async {
 
   // await RM.storageInitializer(StoreHive());
 
+  WidgetsFlutterBinding.ensureInitialized();
+
+  await Firebase.initializeApp(
+    options: DefaultFirebaseOptions.currentPlatform,
+  );
+
   Serv.sample.init();
 
   logx.wtf('inits success');
