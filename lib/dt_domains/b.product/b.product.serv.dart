@@ -12,4 +12,12 @@ class ProductServ {
   void onSetState() {
     logzz.i(ProductServ, 'rxCounter setState success');
   }
+
+  initProductLoader() {
+    _pv.rxProductLoader.stateAsync = _rp.readProducts();
+  }
+
+  addToList(List<Product> moreProducts) {
+    _pv.rxProductList.st = [..._pv.rxProductList.st, ...moreProducts];
+  }
 }

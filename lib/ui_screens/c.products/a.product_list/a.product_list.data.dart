@@ -6,4 +6,8 @@ class ProductListData {
   final rxCounter = 0.inj();
 
   final rxRandom = Prov.sample.st.rxRandom;
+
+  final rxProductLoader = _pv.rxProductLoader;
+
+  final rxProductList = _pv.rxProductList;
 }

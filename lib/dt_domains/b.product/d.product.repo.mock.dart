@@ -7,4 +7,9 @@ class ProductRepoMock implements ProductRepo {
     logz.wtf('random value coming from ProductRepoMock');
     return x;
   }
+
+  @override
+  Future<List<Product>> readProducts() {
+    throw UnimplementedError();
+  }
 }

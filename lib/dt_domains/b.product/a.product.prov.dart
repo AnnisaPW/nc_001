@@ -8,4 +8,21 @@ class ProductProv {
       onSetState: (p0) => _sv.onSetState(),
     ),
   );
+
+  final coll = 'products';
+
+  final rxProductLoader = RM.injectFuture<List<Product>>(
+    () => Future.value([]),
+    sideEffects: SideEffects(
+      initState: () => _sv.initProductLoader(),
+      onSetState: (snap) {
+        if (snap.hasData) {
+          final moreProducts = snap.data;
+          _sv.addToList(moreProducts!);
+        }
+      },
+    ),
+  );
+
+  final rxProductList = RM.inject<List<Product>>(() => []);
 }
