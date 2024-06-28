@@ -4,6 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:states_rebuilder/states_rebuilder.dart';
 
 import '../../../app/_index.dart';
+import '../../../dt_domains/_index.dart';
 import '../../../xtras/_index.dart';
 
 part 'a.product_detail.data.dart';
@@ -18,3 +19,4 @@ part 'widgets/e.product_detail.echo.dart';
 ProductDetailData get _dt => Data.productDetail.st;
 ProductDetailCtrl get _ct => Ctrl.productDetail;
 
+ProductProv get _pv => Prov.product.st;
