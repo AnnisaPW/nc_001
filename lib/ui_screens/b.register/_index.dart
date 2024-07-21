@@ -19,5 +19,5 @@ part 'widgets/f.register.submit.dart';
 RegisterData get _dt => Data.register.st;
 RegisterCtrl get _ct => Ctrl.register;
 
-AuthProv get _pv => Prov.auth.st;
+// AuthProv get _pv => Prov.auth.st;
 AuthServ get _sv => Serv.auth;

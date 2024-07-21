@@ -21,5 +21,5 @@ part 'widgets/i.login.to_register.dart';
 
 LoginData get _dt => Data.login.st;
 LoginCtrl get _ct => Ctrl.login;
-AuthProv get _pv => Prov.auth.st;
+// AuthProv get _pv => Prov.auth.st;
 AuthServ get _sv => Serv.auth;
