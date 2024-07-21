@@ -1,3 +1,4 @@
+
 # Miscellaneous
 *.class
 *.log
@@ -32,6 +33,7 @@ migrate_working_dir/
 /build/
 .fttemplates/
 .readme_template/
+
 
 # Symbolication related
 app.*.symbols
